@@ -29,9 +29,13 @@ public class CardTrick {
             c.setSuit(Card.SUITS[random.nextInt(4)]);  
             magicHand[i] = c;  
          }
+        Card luckyCard = new Card();
+        luckyCard.setValue(7); 
+        luckyCard.setSuit("Hearts");  
+
             Scanner scanner = new Scanner(System.in);
  
-         System.out.println("Pick a card of your choice\n1 for Ace, \n2 for Jack, \n3 for Queen, \n4 for King -> ");
+         System.out.println("Pick a card from 1 to 13 ");
          int userValue = scanner.nextInt();
          
          System.out.println("Pick a suit of your choice \nHearts, Diamonds, Spades, Clubs: ");
@@ -57,12 +61,22 @@ public class CardTrick {
          } else {
              System.out.println("Sorry, your card is not in 1 magic hand.");
          }
+          boolean luckyFound = false;
+        for (Card card : magicHand) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
+                luckyFound = true;
+                break;
+            }
+        }
+
+       
+        if (luckyFound) {
+            System.out.println("The lucky card  is in the magic hand!");
+        } else {
+            System.out.println("The lucky card  is not in the magic hand.");
+        }
  
         
-         System.out.println("\nThe magic hand contains:");
-         for (Card card : magicHand) {
-             System.out.println(card.getValue() + " of " + card.getSuit());
-         }
      }
  }
  
