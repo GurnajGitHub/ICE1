@@ -11,7 +11,8 @@ package cardtrick;
  * There are 52 cards in a deck, no jokers.
  * This code is to be used in ICE1. When you create your own branch,
  * add your name as a modifier.
- * @author Gurnaj
+ * @author Gurnaj Kaur
+ * @id 991759929
  *
  */
 public class Card {
